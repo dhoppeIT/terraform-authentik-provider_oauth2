@@ -5,6 +5,7 @@ variable "authorization_flow" {
 
 variable "client_id" {
   type        = string
+  default     = null
   description = "Client ID of the provider"
 }
 
@@ -26,7 +27,7 @@ variable "access_code_validity" {
 
 variable "access_token_validity" {
   type        = string
-  default     = "minutes=5"
+  default     = "minutes=10"
   description = "How long access tokens are valid for"
 }
 

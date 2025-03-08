@@ -12,10 +12,9 @@ specify the required variables and run the command `terraform init`.
 ```hcl
 module "authentik_provider_oauth2" {
   source  = "gitlab.com/terraform-child-modules-48151/terraform-authentik-provider-oauth2/local"
-  version = "1.0.0"
+  version = "1.1.0"
 
   name               = "example-provider-oauth2"
-  client_id          = "vke8qUguq8J8eCXJOR5UuOWbJfuob1PoGOH9oo0n"
   authorization_flow = "8dd2dda7-5624-4f42-8984-04139ce50236"
   invalidation_flow  = "742a8bb5-3981-44ab-949f-dada3e92daf9"
 }
@@ -28,12 +27,14 @@ module "authentik_provider_oauth2" {
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_authentik"></a> [authentik](#requirement\_authentik) | ~> 2024.12 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | ~> 3.7 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_authentik"></a> [authentik](#provider\_authentik) | ~> 2024.12 |
+| <a name="provider_random"></a> [random](#provider\_random) | ~> 3.7 |
 
 ## Modules
 
@@ -44,17 +45,18 @@ No modules.
 | Name | Type |
 |------|------|
 | [authentik_provider_oauth2.this](https://registry.terraform.io/providers/goauthentik/authentik/latest/docs/resources/provider_oauth2) | resource |
+| [random_string.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_access_code_validity"></a> [access\_code\_validity](#input\_access\_code\_validity) | How long access codes are valid for | `string` | `"minutes=1"` | no |
-| <a name="input_access_token_validity"></a> [access\_token\_validity](#input\_access\_token\_validity) | How long access tokens are valid for | `string` | `"minutes=5"` | no |
+| <a name="input_access_token_validity"></a> [access\_token\_validity](#input\_access\_token\_validity) | How long access tokens are valid for | `string` | `"minutes=10"` | no |
 | <a name="input_allowed_redirect_uris"></a> [allowed\_redirect\_uris](#input\_allowed\_redirect\_uris) | The list of valid redirect URIs after a successful authorization flow | `list(map(string))` | `null` | no |
 | <a name="input_authentication_flow"></a> [authentication\_flow](#input\_authentication\_flow) | Flow used for authentication when the associated application is accessed by an un-authenticated user | `string` | `null` | no |
 | <a name="input_authorization_flow"></a> [authorization\_flow](#input\_authorization\_flow) | Flow used when authorizing this provider | `string` | n/a | yes |
-| <a name="input_client_id"></a> [client\_id](#input\_client\_id) | Client ID of the provider | `string` | n/a | yes |
+| <a name="input_client_id"></a> [client\_id](#input\_client\_id) | Client ID of the provider | `string` | `null` | no |
 | <a name="input_client_secret"></a> [client\_secret](#input\_client\_secret) | Client secret of the provider | `string` | `null` | no |
 | <a name="input_client_type"></a> [client\_type](#input\_client\_type) | Client type of the provider | `string` | `"confidential"` | no |
 | <a name="input_encryption_key"></a> [encryption\_key](#input\_encryption\_key) | Key used to encrypt the tokens | `string` | `null` | no |

@@ -1,6 +1,6 @@
 resource "authentik_provider_oauth2" "this" {
   authorization_flow = var.authorization_flow
-  client_id          = var.client_id
+  client_id          = var.client_id != null ? var.client_id : one(random_string.this[*].result)
   invalidation_flow  = var.invalidation_flow
   name               = var.name
 
@@ -19,4 +19,12 @@ resource "authentik_provider_oauth2" "this" {
   refresh_token_validity     = var.refresh_token_validity
   signing_key                = var.signing_key
   sub_mode                   = var.sub_mode
+}
+
+resource "random_string" "this" {
+  count = var.client_id == null ? 1 : 0
+
+  length = 40
+
+  special = false
 }

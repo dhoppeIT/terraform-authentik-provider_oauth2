@@ -24,6 +24,7 @@ command `terraform destroy` when the resources are no longer needed.
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_authentik"></a> [authentik](#requirement\_authentik) | ~> 2024.12 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | ~> 3.7 |
 
 ## Providers
 
