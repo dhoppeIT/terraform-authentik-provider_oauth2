@@ -23,14 +23,14 @@ command `terraform destroy` when the resources are no longer needed.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_authentik"></a> [authentik](#requirement\_authentik) | ~> 2024.12 |
+| <a name="requirement_authentik"></a> [authentik](#requirement\_authentik) | ~> 2025.0 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | ~> 3.7 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_authentik"></a> [authentik](#provider\_authentik) | ~> 2024.12 |
+| <a name="provider_authentik"></a> [authentik](#provider\_authentik) | ~> 2025.0 |
 
 ## Modules
 
