@@ -15,7 +15,10 @@ resource "authentik_provider_oauth2" "this" {
   issuer_mode                = var.issuer_mode
   jwt_federation_providers   = var.jwt_federation_providers
   jwt_federation_sources     = var.jwt_federation_sources
+  logout_method              = var.logout_method
+  logout_uri                 = var.logout_uri
   property_mappings          = var.property_mappings
+  refresh_token_threshold    = var.refresh_token_threshold
   refresh_token_validity     = var.refresh_token_validity
   signing_key                = var.signing_key
   sub_mode                   = var.sub_mode

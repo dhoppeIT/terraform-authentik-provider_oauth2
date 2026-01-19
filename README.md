@@ -65,8 +65,11 @@ No modules.
 | <a name="input_issuer_mode"></a> [issuer\_mode](#input\_issuer\_mode) | Configure how the issuer field of the ID Token should be filled | `string` | `"per_provider"` | no |
 | <a name="input_jwt_federation_providers"></a> [jwt\_federation\_providers](#input\_jwt\_federation\_providers) | JWTs issued by any of the configured providers can be used to authenticate on behalf of this provider | `list(number)` | `[]` | no |
 | <a name="input_jwt_federation_sources"></a> [jwt\_federation\_sources](#input\_jwt\_federation\_sources) | JWTs issued by keys configured in any of the selected sources can be used to authenticate on behalf of this provider | `list(string)` | `[]` | no |
+| <a name="input_logout_method"></a> [logout\_method](#input\_logout\_method) | Logout method of the provider | `string` | `"backchannel"` | no |
+| <a name="input_logout_uri"></a> [logout\_uri](#input\_logout\_uri) | URI to send logout notifications to when users log out | `string` | `null` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the provider | `string` | n/a | yes |
 | <a name="input_property_mappings"></a> [property\_mappings](#input\_property\_mappings) | List of properties to pass information to external applications | `list(string)` | `[]` | no |
+| <a name="input_refresh_token_threshold"></a> [refresh\_token\_threshold](#input\_refresh\_token\_threshold) | Renew refresh token whithin this threshold | `string` | `"seconds=0"` | no |
 | <a name="input_refresh_token_validity"></a> [refresh\_token\_validity](#input\_refresh\_token\_validity) | How long refresh tokens are valid for | `string` | `"days=30"` | no |
 | <a name="input_signing_key"></a> [signing\_key](#input\_signing\_key) | Key used to sign the tokens | `string` | `null` | no |
 | <a name="input_sub_mode"></a> [sub\_mode](#input\_sub\_mode) | Configure what data should be used as unique User identifier | `string` | `"hashed_user_id"` | no |

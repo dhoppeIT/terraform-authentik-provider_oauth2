@@ -96,10 +96,33 @@ variable "jwt_federation_sources" {
   description = "JWTs issued by keys configured in any of the selected sources can be used to authenticate on behalf of this provider"
 }
 
+variable "logout_method" {
+  type        = string
+  default     = "backchannel"
+  description = "Logout method of the provider"
+
+  validation {
+    condition     = contains(["backchannel", "frontchannel"], var.logout_method)
+    error_message = "Valid values are backchennel, frontchannel"
+  }
+}
+
+variable "logout_uri" {
+  type        = string
+  default     = null
+  description = "URI to send logout notifications to when users log out"
+}
+
 variable "property_mappings" {
   type        = list(string)
   default     = []
   description = "List of properties to pass information to external applications"
+}
+
+variable "refresh_token_threshold" {
+  type        = string
+  default     = "seconds=0"
+  description = "Renew refresh token whithin this threshold"
 }
 
 variable "refresh_token_validity" {
