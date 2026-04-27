@@ -2,7 +2,7 @@ terraform {
   required_providers {
     authentik = {
       source  = "goauthentik/authentik"
-      version = "~> 2025.0"
+      version = "~> 2026.0"
     }
 
     # tflint-ignore: terraform_unused_required_providers

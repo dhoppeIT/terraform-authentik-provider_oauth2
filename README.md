@@ -24,16 +24,16 @@ module "authentik_provider_oauth2" {
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_authentik"></a> [authentik](#requirement\_authentik) | ~> 2025.0 |
+| <a name="requirement_authentik"></a> [authentik](#requirement\_authentik) | ~> 2026.0 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | ~> 3.7 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
-| <a name="provider_authentik"></a> [authentik](#provider\_authentik) | ~> 2025.0 |
+| ---- | ------- |
+| <a name="provider_authentik"></a> [authentik](#provider\_authentik) | ~> 2026.0 |
 | <a name="provider_random"></a> [random](#provider\_random) | ~> 3.7 |
 
 ## Modules
@@ -43,14 +43,14 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [authentik_provider_oauth2.this](https://registry.terraform.io/providers/goauthentik/authentik/latest/docs/resources/provider_oauth2) | resource |
 | [random_string.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_access_code_validity"></a> [access\_code\_validity](#input\_access\_code\_validity) | How long access codes are valid for | `string` | `"minutes=1"` | no |
 | <a name="input_access_token_validity"></a> [access\_token\_validity](#input\_access\_token\_validity) | How long access tokens are valid for | `string` | `"minutes=10"` | no |
 | <a name="input_allowed_redirect_uris"></a> [allowed\_redirect\_uris](#input\_allowed\_redirect\_uris) | The list of valid redirect URIs after a successful authorization flow | `list(map(string))` | `null` | no |
@@ -77,7 +77,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_id"></a> [id](#output\_id) | The ID of this resource |
 <!-- END_TF_DOCS -->
 
